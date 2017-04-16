@@ -46,6 +46,13 @@ const Twilio = {
   sendDigits (digits) {
     TwilioRCT.sendDigits(digits)
   },
+    removeAllEventListeners() {
+        for (var key in _eventHandlers) {
+            if (_eventHandlers.hasOwnProperty(key)) {
+                NativeAppEventEmitter.removeAllListeners(key);
+            }
+        }
+    },
   addEventListener (type, handler) {
     _eventHandlers[type].set(handler, NativeAppEventEmitter.addListener(
       type, (rtn) => {
