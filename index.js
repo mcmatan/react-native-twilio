@@ -37,6 +37,9 @@ const Twilio = {
   ignore () {
     TwilioRCT.ignore()
   },
+    shutDown() {
+        TwilioRCT.shutDown()
+    },
   setMuted (isMuted) {
     TwilioRCT.setMuted(isMuted)
   },
