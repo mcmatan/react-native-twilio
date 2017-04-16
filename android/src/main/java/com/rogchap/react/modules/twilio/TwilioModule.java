@@ -206,6 +206,11 @@ public class TwilioModule extends ReactContextBaseJavaModule implements Connecti
     }
 
     @ReactMethod
+    public void shutDown() {
+        Twilio.shutdown();;
+    }
+
+    @ReactMethod
     public void disconnect() {
         if (_connection != null) {
             _connection.disconnect();
